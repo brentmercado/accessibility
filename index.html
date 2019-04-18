@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Accessibility</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav role="navigation">
+        <a class="skip-nav-link" href="#">Skip Navigation</a>
+        <div class="mobile-nav">
+            <div class="nav-logo">
+                <a class="nav-logo__image hide-text" href="#">Accessibility Home Page</a>
+            </div>
+            <button class="mobile-menu-btn hide-text" role="button">Menu</button>
+        </div>
+        <ul class="mobile-menu__list">
+            <li class="mobile-menu__item">
+                <a href="#">Content1</a>
+            </li>
+            <li class="mobile-menu__item">
+                <a href="#">Content2</a>
+            </li>
+            <li class="mobile-menu__item">
+                <a href="#">Content3</a>
+            </li>
+        </ul>
+    </nav>
+    <script src="accessibility.js"></script>
+</body>
+</html>
