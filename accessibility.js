@@ -95,16 +95,31 @@ function tabTrap(event) {
             }
         }
     } else if (event.key === 'Escape') {
-        closeMobileNav();
+        if (event.target === mobileMenuBtn) {
+            closeMobileNav();
+        } else {
+            closeModal();
+        }
     }
 }
 
 function openModal() {
+    previouslyFocus = document.activeElement;
+    modal.focus();
+
+    //set tabbable modal elements
+    tabElements = Array.from(modal.querySelectorAll('button, input'));
+    body.addEventListener('keydown', tabTrap);
+
     modal.style.display = "block";
     modalOverlay.style.display = "block";
 }
 
 function closeModal() {
+    body.removeEventListener('keydown', tabTrap);
+
     modal.style.display = "none";
     modalOverlay.style.display = "none";
+
+    previouslyFocus.focus();
 }
