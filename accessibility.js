@@ -1,13 +1,23 @@
 var body = document.querySelector('body');
+var previouslyFocus;
+// Nav
 var nav = document.querySelector('nav');
 var mobileMenuBtn = document.querySelector('.mobile-menu-btn');
 var mobileMenuList = document.querySelector('.mobile-menu__list');
-var previousFocus;
+// Modal Section
+var modalBtn = document.querySelector('.modal-btn');
+var modalOverlay = document.querySelector('.modal-overlay');
+var modal = document.querySelector('.modal');
+var cancelBtn = document.querySelector('.modal-btn__cancel');
+var submitBtn = document.querySelector('.modal-btn__submit');
 
 mobileMenuBtn.addEventListener('click', toggleMobileNav);
-
 nav.addEventListener('focusin', focusMobileNav);
 nav.addEventListener('focusout', focusOutMobileNav);
+
+modalBtn.addEventListener('click', openModal);
+cancelBtn.addEventListener('click', closeModal);
+modalOverlay.addEventListener('click', closeModal);
 
 // Global Tab Elements
 var tabElements;
@@ -87,4 +97,14 @@ function tabTrap(event) {
     } else if (event.key === 'Escape') {
         closeMobileNav();
     }
+}
+
+function openModal() {
+    modal.style.display = "block";
+    modalOverlay.style.display = "block";
+}
+
+function closeModal() {
+    modal.style.display = "none";
+    modalOverlay.style.display = "none";
 }
