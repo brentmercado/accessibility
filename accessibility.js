@@ -6,13 +6,11 @@ var previousFocus;
 
 mobileMenuBtn.addEventListener('click', toggleMobileNav);
 
-// tab trap global vars
-var tabElements;
-var firstTabElement;
-var lastTabElement;
-
 nav.addEventListener('focusin', focusMobileNav);
 nav.addEventListener('focusout', focusOutMobileNav);
+
+// BUG ON USING MOUSE WILL CAUSE FOCUS TO LEAVE MENU BUTTON
+// AND IT WILL CHANGE WHEN IT SHOULDN'T
 
 function focusMobileNav(event) {
     if (event.target === mobileMenuBtn) {
@@ -46,8 +44,36 @@ function toggleMobileNav() {
         // open the nav menu
         mobileMenuList.style.display = 'block';
         mobileMenuBtn.style.backgroundImage = "url(./close_icon_focus.png)";
+        
+        // TAB TRAPPER
         // gather tabbable items
+        var tabElements = Array.from(document.querySelectorAll('.mobile-menu-btn, .mobile-menu__item a'));
+        var firstTabElement = tabElements[0];
+        var lastTabElement = tabElements[tabElements.length - 1];
         // listen to tab keys pressed 
+        nav.addEventListener('keydown', mobileTabTrap);
+
+        function mobileTabTrap(event) {
+            if (event.key === 'Tab') {
+                // Shift held down
+                if (event.shiftKey) {
+                    // Backward Tab
+                    if (document.activeElement === firstTabElement) {
+                        event.preventDefault();
+                        lastTabElement.focus();
+                    }
+                } else {
+                    // Forward Tab
+                    if (document.activeElement === lastTabElement) {
+                        event.preventDefault();
+                        firstTabElement.focus();
+                    }
+                }
+            }
+        }
+
+        // event.shiftKey
+        // event.key
     }
 }
 
