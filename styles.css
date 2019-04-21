@@ -10,6 +10,12 @@ body {
     color: transparent;
 }
 
+.aria-hide-text {
+    color: transparent;
+    position: absolute;
+    left: -1000px;
+}
+
 .flex-container {
     display: flex;
 }
@@ -91,7 +97,7 @@ nav {
 }
 
 .mobile-menu__item {
-    margin-bottom: 8px;
+    margin-bottom: 16px;
     font-size: 1.2rem;
 }
 
@@ -185,4 +191,20 @@ form button {
     display: none;
     margin: 0;
     padding: 0;
+}
+
+.panel {
+    width: 80%;
+    margin: 12px 8px;
+    padding: 4px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.group-btns-container {
+    margin: 16px 0 32px 0;
+}
+
+.increment-btn {
+    margin-right: 16px;
 }

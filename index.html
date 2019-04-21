@@ -9,7 +9,7 @@
 </head>
 <body>
     <nav role="navigation">
-        <a class="skip-nav-link" href="#">Skip Navigation</a>
+        <a class="skip-nav-link" href="#main">Skip Navigation</a>
         <div class="mobile-nav">
             <div class="nav-logo">
                 <a class="nav-logo__image hide-text" href="#">Accessibility Home Page</a>
@@ -18,23 +18,20 @@
         </div>
         <ul class="mobile-menu__list">
             <li class="mobile-menu__item">
-                <a href="#">Content1</a>
+                <a href="#tab-trapping">Tab Trapping</a>
             </li>
             <li class="mobile-menu__item">
-                <a href="#">Content2</a>
-            </li>
-            <li class="mobile-menu__item">
-                <a href="#">Content3</a>
+                <a href="#live-region">ARIA Live Region</a>
             </li>
         </ul>
     </nav>
-    <main role="main">
+    <main role="main" id="main">
         <h1>Web Accessibility</h1>
 
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero pariatur consequatur explicabo. Itaque minus aliquam unde modi blanditiis beatae, rerum debitis deserunt cupiditate ratione veniam iste numquam dolorum, voluptas nihil!</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum totam dicta magnam asperiores dolorem provident eos unde! Quae necessitatibus, consequatur quidem facere a provident quas iure blanditiis qui mollitia enim!</p>
 
-        <section role="section">
+        <section role="section" id="tab-trapping">
             <h2>Tab Trapping</h2>
 
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere vel natus excepturi amet soluta autem sit vitae voluptates ipsa eum. Veniam impedit aut vitae quisquam illum repudiandae a quo voluptatibus.</p>
@@ -49,19 +46,47 @@
                 <p>Sign up today!</p>
 
                 <form class="flex-container flex-column">
-                    <label class="hide-text" for="email">Enter email</label>
+                    <label class="aria-hide-text" for="email">Enter email</label>
                     <input id="email" type="text" placeholder="Email">
-                    <label class="hide-text" for="password">Enter password</label>
+                    <label class="aria-hide-text" for="password">Enter password</label>
                     <input id="password" type="password" placeholder="Password">
                     <div class="flex-container flex-center modal-buttons">
                         <button class="modal-btn__cancel">Cancel</button>
-                        <label class="hide-text" for="submit">Fake Submit Button</label>
+                        <label class="aria-hide-text" for="submit">Fake Submit Button</label>
                         <input class="modal-btn__submit" id="submit" type="submit" value="Submit">
                     </div>
                 </form>
             </div>
 
             <div class="modal-overlay"></div>
+        </section>
+
+        <section role="section" id="live-region">
+            <h2>ARIA Live Regions</h2>
+
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit quaerat rerum omnis, alias, odio molestias, nesciunt debitis repellendus officiis voluptates magnam commodi libero temporibus suscipit officia eos dolorum maiores. Nulla.</p>
+
+            <div class="flex-container flex-center">
+                <aside class="panel" role="aside" aria-live="assertive" aria-describedby="counter-box description-counter-box" tabindex="0">
+                    0
+                </aside>
+            </div>
+
+            <div class="aria-hide-text" id="counter-box">
+                Counter Box
+            </div>
+
+            <div class="aria-hide-text" id="description-counter-box">
+                Updates to this live region will be read immediately to the user.
+            </div>  
+
+            <div class="flex-container flex-center group-btns-container">
+                <button class="increment-btn">Increment</button>
+                <button class="decrement-btn">Decrement</button>
+            </div>
+
+            <div id="inc-btn-desc" class="aria-hide-text">Increments Counter Box by 1</div>
+            <div id="dec-btn-desc" class="aria-hide-text">Decrements Counter Box by 1</div>
         </section>
     </main>
 

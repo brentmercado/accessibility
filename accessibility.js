@@ -10,6 +10,11 @@ var modalOverlay = document.querySelector('.modal-overlay');
 var modal = document.querySelector('.modal');
 var cancelBtn = document.querySelector('.modal-btn__cancel');
 var submitBtn = document.querySelector('.modal-btn__submit');
+// Live Region Section
+var counter = document.querySelector('.panel');
+var incrementBtn = document.querySelector('.increment-btn');
+var decrementBtn = document.querySelector('.decrement-btn');
+
 
 mobileMenuBtn.addEventListener('click', toggleMobileNav);
 nav.addEventListener('focusin', focusMobileNav);
@@ -18,6 +23,9 @@ nav.addEventListener('focusout', focusOutMobileNav);
 modalBtn.addEventListener('click', openModal);
 cancelBtn.addEventListener('click', closeModal);
 modalOverlay.addEventListener('click', closeModal);
+
+incrementBtn.addEventListener('click', incrementCounter);
+decrementBtn.addEventListener('click', decrementCounter);
 
 // Global Tab Elements
 var tabElements;
@@ -122,4 +130,14 @@ function closeModal() {
     modalOverlay.style.display = "none";
 
     previouslyFocus.focus();
+}
+
+function incrementCounter() {
+    var count = parseInt(counter.innerText);
+    counter.innerText = ++count;
+}
+
+function decrementCounter() {
+    var count = parseInt(counter.innerText);
+    counter.innerText = --count;
 }
