@@ -205,3 +205,33 @@ form button {
 .increment-btn {
     margin-right: 16px;
 }
+
+.active {
+    display: block;
+}
+
+@media (min-width: 961px) {
+    .mobile-nav {
+        display: none;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .nav-menu__list {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-end;
+    }
+
+    .nav-menu__item {
+        margin: 0 16px;
+    }
+
+    .nav-menu__item a:hover {
+        color: #D2F2CA;
+    }
+}

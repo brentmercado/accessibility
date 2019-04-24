@@ -35,7 +35,7 @@ var tabElements;
 
 function focusMobileNav(event) {
     if (event.target === mobileMenuBtn) {
-        if (mobileMenuList.style.display !== 'block') {
+        if (!mobileMenuList.className.includes('active')) {
             mobileMenuBtn.style.backgroundImage = "url(./menu_icon_focus.png)";
         } else {
             mobileMenuBtn.style.backgroundImage = "url(./close_icon_focus.png)";
@@ -45,7 +45,7 @@ function focusMobileNav(event) {
 
 function focusOutMobileNav(event) {
     if (event.target === mobileMenuBtn) {
-        if (mobileMenuList.style.display !== 'block') {
+        if (!mobileMenuList.className.includes('active')) {
             mobileMenuBtn.style.backgroundImage = "url(./menu_icon.png)";
         } else {
             mobileMenuBtn.style.backgroundImage = "url(./close_icon.png)";
@@ -54,7 +54,7 @@ function focusOutMobileNav(event) {
 }
 
 function toggleMobileNav() {
-    if (mobileMenuList.style.display === 'block') {
+    if (mobileMenuList.className.includes('active')) {
         closeMobileNav();
     } else {
         openMobileNav();
@@ -64,7 +64,7 @@ function toggleMobileNav() {
 }
 
 function closeMobileNav() {
-    mobileMenuList.style.display = 'none';
+    mobileMenuList.classList.toggle('active');
     mobileMenuBtn.style.backgroundImage = "url(./menu_icon_focus.png)";
 
     nav.removeEventListener('keydown', tabTrap);
@@ -72,7 +72,7 @@ function closeMobileNav() {
 }
 
 function openMobileNav() {
-    mobileMenuList.style.display = 'block';
+    mobileMenuList.classList.toggle('active');
     mobileMenuBtn.style.backgroundImage = "url(./close_icon_focus.png)";
 }
 
@@ -105,7 +105,6 @@ function tabTrap(event) {
 
 function openModal() {
     previouslyFocus = document.activeElement;
-    modal.focus();
 
     //set tabbable modal elements
     tabElements = Array.from(modal.querySelectorAll('button, input'));
