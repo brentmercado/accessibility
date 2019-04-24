@@ -3,7 +3,7 @@ var previouslyFocus;
 // Nav
 var nav = document.querySelector('nav');
 var mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-var mobileMenuList = document.querySelector('.mobile-menu__list');
+var mobileMenuList = document.querySelector('.nav-menu__list');
 // Modal Section
 var modalBtn = document.querySelector('.modal-btn');
 var modalOverlay = document.querySelector('.modal-overlay');
@@ -59,7 +59,7 @@ function toggleMobileNav() {
     } else {
         openMobileNav();
         
-        mobileTabTrap();
+        // mobileTabTrap();
     }
 }
 
@@ -74,14 +74,6 @@ function closeMobileNav() {
 function openMobileNav() {
     mobileMenuList.style.display = 'block';
     mobileMenuBtn.style.backgroundImage = "url(./close_icon_focus.png)";
-}
-
-function mobileTabTrap() {
-    // Set global global tabbable variable
-    tabElements = Array.from(document.querySelectorAll('.mobile-menu-btn, .mobile-menu__item a'));
-
-    // listen to tab keys pressed 
-    nav.addEventListener('keydown', tabTrap);
 }
 
 function tabTrap(event) {
