@@ -1,5 +1,5 @@
 # accessibility
-Demonstrates web accessibility
+Demonstrates web accessibility [Link to live website](https://brentmercado.github.io/accessibility/)
 
 Roughly 15 percent of the world's population lives with some form of disability, of whom 2 to 4 percent experience significant difficulties in functioning. Disabilities come in many forms such as vision and/or hearing impaired, difficulty with motor functions, and attention spans. The purpose of this web page is to demonstrate web accessibility. Websites should be accessible by everyone, and as web developers, it is our responsibility to build experiences for all. 
 
