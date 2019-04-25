@@ -28,13 +28,13 @@
     <main role="main" id="main">
         <h1>Web Accessibility</h1>
 
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero pariatur consequatur explicabo. Itaque minus aliquam unde modi blanditiis beatae, rerum debitis deserunt cupiditate ratione veniam iste numquam dolorum, voluptas nihil!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum totam dicta magnam asperiores dolorem provident eos unde! Quae necessitatibus, consequatur quidem facere a provident quas iure blanditiis qui mollitia enim!</p>
+        <p>Roughly 15 percent of the world's population lives with some form of disability, of whom 2 to 4 percent experience significant difficulties in functioning. Disabilities come in many forms such as vision and/or hearing impaired, difficulty with motor functions, and attention spans. The purpose of this web page is to demonstrate web accessibility. Websites should be accessible by everyone, and as web developers, it is our responsibility to build experiences for all.</p>
+        <p>This website can be navigated with only a keyboard by using the Tab button to move forward, and Shift + Tab buttons to move backwards. Users can also experience this website using a screen reader. Some popular choices for screen readers are <a href="https://www.apple.com/accessibility/mac/vision/">VoiceOver</a> for Mac users and <a href="https://www.nvaccess.org/">NVDA</a> for Windows. Color contrast was also taken into account and conforms to WCAG Level AA standards. Users can download the Chrome Extension <a href="https://chrome.google.com/webstore/detail/nocoffee/jjeeggmbnhckmgdhmgdckeigabjfbddl">NoCoffee</a> to view the web page from the perspective of a person suffering from vision disabilities. </p>
 
         <section role="section" id="tab-trapping">
             <h2>Tab Trapping</h2>
 
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere vel natus excepturi amet soluta autem sit vitae voluptates ipsa eum. Veniam impedit aut vitae quisquam illum repudiandae a quo voluptatibus.</p>
+            <p>Tab Trapping forces users to stay in a specific section of a page when navigating around a website. One common use case for tab trapping is when a modal is displayed. Once the modal displays by clicking the Open Modal button, users will be able to tab through the different modal options. When tabbing past the last item inside the modal, the user will be brought right back to the first option inside the modal. This feature makes it very convenient for keyboard only users to navigate around the modal. A user can exit the modal by clicking outside the modal or by pressing the Escape button.</p>
 
             <div class="flex-container flex-row flex-center">
                 <button role="button" class="modal-btn" aria-describedby="modal-description">Open Modal</button>
@@ -64,7 +64,7 @@
         <section role="section" id="live-region">
             <h2>ARIA Live Regions</h2>
 
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit quaerat rerum omnis, alias, odio molestias, nesciunt debitis repellendus officiis voluptates magnam commodi libero temporibus suscipit officia eos dolorum maiores. Nulla.</p>
+            <p>When interacting with a website, users can change the way a page is displayed. An example might be clicking on an image to bring up more information about it. The new information shows up without the whole page reloading and you can visually see it now on the page. Non visually impaired users can see this change very easily, but to a user suffering from visual disabilities, this change is not brought to their attention. The assistive technology does not pick up on this change in the website and may leave users unaware of the new update. This is where ARIA live regions come in handy. Developers have the option to set a live region to either ‘polite’, ‘assertive’, or the default setting of ‘off’. Assertive settings will have the screen reader immediately read aloud the new change, regardless of whatever the screen reader is currently reading. Polite settings will have the screen reader announce the new changes made on the website only when idle.  With your screen reader turned on, try incrementing and decrementing the number below. Listen to how the screen reader lets the users know the number was updated.</p>
 
             <div class="flex-container flex-center">
                 <aside class="panel" role="aside" aria-live="assertive" aria-describedby="counter-box description-counter-box" tabindex="0">
